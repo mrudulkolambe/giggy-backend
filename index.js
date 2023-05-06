@@ -6,6 +6,9 @@ require('dotenv').config()
 
 const app = express();
 const port = 1000;
+app.use(cors({
+	origin: '*'
+}))
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.json())
@@ -14,7 +17,6 @@ app.use(bodyParser.json())
 const userRouter = require('./Routes/User');
 app.use("/user", userRouter)
 
-app.use(cors())
 
 
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
