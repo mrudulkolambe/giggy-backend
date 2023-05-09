@@ -19,6 +19,39 @@ const USER_SCHEMA = new Schema({
 	username: {
 		type: String,
 		unique: true
+	},
+	role: {
+		type: String,
+		required: true,
+		enum: ['artist', 'venue', 'event_organizer']
+	},
+	address: {
+		type: String
+	},
+	latitude: {
+		type: String,
+	},
+	longitude: {
+		type: String
+	},
+	artistList:{
+		type: String,
+	},
+	gender: {
+		type: String,
+		enum: ['male', 'female', 'transgender']
+	},
+	dateOfBirth: {
+		type: Date
+	},
+	mobileNo: {
+		type: String
+	},
+	question1: {
+		type: String
+	},
+	question2: {
+		type: String
 	}
 });
 
